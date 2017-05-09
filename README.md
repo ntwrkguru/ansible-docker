@@ -50,8 +50,26 @@ localhost                  : ok=2    changed=1    unreachable=0    failed=0
 You don't need to start and interact with the container at all. You can use the image to as an `ansible-playbook` executable.
 
 ```bash
+$ ls -1
+deploy.retry
+deploy.yml
+foo
+hosts
+$ docker run -v $PWD:/playbook ntwrkguru/ansible-docker:pb -i hosts deploy.yml 
 
+PLAY [localhost] ***************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [ping] ********************************************************************
+changed: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=1    unreachable=0    failed=0
 ```
+
+Notice how we bind mount a host directory (in this case the current working directory) to /playbook so that we can load the inventory and playbook from our host.
 
 ### Ansible ad-hoc executable
 
