@@ -9,6 +9,6 @@ RUN apk update \
 WORKDIR /playbook
 
 
-ENTRYPOINT ["ansible"]
+ENTRYPOINT ["ansible-playbook"]
 
-CMD ["--version"]
+CMD ["--help"]
