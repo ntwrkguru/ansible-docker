@@ -40,3 +40,9 @@ changed: [localhost]
 PLAY RECAP *************************************************************************************************************
 localhost                  : ok=2    changed=1    unreachable=0    failed=0
 ```
+
+### Ansible ad-hoc executable
+
+You don't need to start and interact with the container at all. You can use the image as an ad-hoc executable for Ansible commands.
+
+```bash
