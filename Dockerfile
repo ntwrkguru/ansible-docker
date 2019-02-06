@@ -10,3 +10,4 @@ RUN apk add --no-cache python2-dev py2-pip build-base libffi-dev openssl-dev && 
 WORKDIR /playbook
 
 VOLUME ["/playbook"]
+VOLUME ["/usr/bin/ansible"]
